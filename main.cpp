@@ -1,3 +1,4 @@
+#include "ColorSliderV.h"
 #include "ColorWheelHS.h"
 
 #include <QApplication>
@@ -10,7 +11,7 @@ class TestMainWindow : public QMainWindow
 public:
     TestMainWindow()
     {
-        ColorWheelHS *colorWheelHs {new ColorWheelHS {color, this}};
+        auto *colorWheelHs {new ColorSliderV {color, this}};
     }
 };
 

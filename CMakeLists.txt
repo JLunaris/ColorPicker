@@ -16,12 +16,17 @@ find_package(Qt6 COMPONENTS
 
 add_executable(ColorPicker main.cpp
         ColorWheelHS.cpp
-        ColorWheelHS.h)
+        ColorWheelHS.h
+        ColorSliderV.cpp
+        ColorSliderV.h)
+
 target_link_libraries(ColorPicker
         Qt::Core
         Qt::Gui
         Qt::Widgets
 )
+
+#add_compile_definitions(QT_NO_DEBUG_OUTPUT)
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)
