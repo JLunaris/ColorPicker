@@ -96,11 +96,25 @@ void ColorFieldsPanel::setupUi()
                 QFormLayout *formLayout {new QFormLayout};
                 hBoxLayout->addLayout(formLayout);
 
-                formLayout->setHorizontalSpacing(10);
+                formLayout->setHorizontalSpacing(5);
 
-                formLayout->addRow("色相(H):", m_hField);
-                formLayout->addRow("饱和度(S):", m_sField);
-                formLayout->addRow("明度(B):", m_vField);
+                QHBoxLayout *hLayout {new QHBoxLayout};
+                hLayout->addWidget(m_hField);
+                hLayout->addWidget(new QLabel {"度"});
+                hLayout->setSpacing(3);
+                formLayout->addRow("色相(H):", hLayout);
+
+                QHBoxLayout *sLayout {new QHBoxLayout};
+                sLayout->addWidget(m_sField);
+                sLayout->addWidget(new QLabel {"%"});
+                sLayout->setSpacing(3);
+                formLayout->addRow("饱和度(S):", sLayout);
+
+                QHBoxLayout *vLayout {new QHBoxLayout};
+                vLayout->addWidget(m_vField);
+                vLayout->addWidget(new QLabel {"%"});
+                vLayout->setSpacing(3);
+                formLayout->addRow("明度(B):", vLayout);
             }
 
             hBoxLayout->addStretch();
@@ -110,7 +124,7 @@ void ColorFieldsPanel::setupUi()
                 QFormLayout *formLayout {new QFormLayout};
                 hBoxLayout->addLayout(formLayout);
 
-                formLayout->setHorizontalSpacing(10);
+                formLayout->setHorizontalSpacing(5);
 
                 formLayout->addRow("红色(R):", m_rField);
                 formLayout->addRow("绿色(G):", m_gField);
