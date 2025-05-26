@@ -16,6 +16,8 @@ public:
         connect(colorPicker, &ColorPicker::colorChanged, this, [](const QColor &color) {
             qDebug() << "Current color: " << color;
         });
+
+        setFixedSize(colorPicker->size());
     }
 };
 

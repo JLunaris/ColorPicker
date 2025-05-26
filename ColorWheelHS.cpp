@@ -91,7 +91,11 @@ void ColorWheelHS::paintEvent(QPaintEvent *event)
 
     // target小圆圈
     {
-        painter.setPen(QPen {QBrush {0x444444}, 1});
+        if (m_color.valueF() < 0.7) {
+            painter.setPen(QPen {Qt::white, 1});
+        } else {
+            painter.setPen(QPen {QBrush {0x444444}, 1});
+        }
         painter.setBrush(m_color);
 
         if (m_isMouseGrabbed) {
