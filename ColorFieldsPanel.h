@@ -44,7 +44,7 @@ class ColorFieldsPanel : public QWidget
     ColorNameSpinBox *m_nameField {new ColorNameSpinBox {this}};
 
 Q_SIGNALS:
-    void ColorChanged();
+    void ColorChanged(const QColor &color);
 
 public Q_SLOTS:
     void syncWithColor();

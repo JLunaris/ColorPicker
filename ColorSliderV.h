@@ -16,7 +16,7 @@ class ColorSliderV : public QWidget
     QColor m_handleColor {Qt::black}; // 手柄颜色
 
 Q_SIGNALS:
-    void ColorChanged();
+    void ColorChanged(const QColor &color);
 
 public Q_SLOTS:
     void syncWithColor();

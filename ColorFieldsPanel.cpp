@@ -226,35 +226,40 @@ ColorFieldsPanel::ColorFieldsPanel(QColor &color, QWidget *parent)
     {
         connect(m_hField, &QSpinBox::valueChanged, this, [this](int h) {
             m_color.setHsv(h, m_color.saturation(), m_color.value());
-            Q_EMIT ColorChanged();
+            syncWithColor();
+            Q_EMIT ColorChanged(m_color);
         });
         connect(m_sField, &QSpinBox::valueChanged, this, [this](int s) {
             m_color.setHsvF(m_color.hueF(), float(s) / 100, m_color.valueF());
-            Q_EMIT ColorChanged();
+            syncWithColor();
+            Q_EMIT ColorChanged(m_color);
         });
         connect(m_vField, &QSpinBox::valueChanged, this, [this](int v) {
             m_color.setHsvF(m_color.hueF(), m_color.saturationF(), float(v) / 100);
-            Q_EMIT ColorChanged();
+            syncWithColor();
+            Q_EMIT ColorChanged(m_color);
         });
         connect(m_rField, &QSpinBox::valueChanged, this, [this](int r) {
             m_color.setRgb(r, m_color.green(), m_color.blue());
-            Q_EMIT ColorChanged();
+            syncWithColor();
+            Q_EMIT ColorChanged(m_color);
         });
         connect(m_gField, &QSpinBox::valueChanged, this, [this](int g) {
             m_color.setRgb(m_color.red(), g, m_color.blue());
-            Q_EMIT ColorChanged();
+            syncWithColor();
+            Q_EMIT ColorChanged(m_color);
         });
         connect(m_bField, &QSpinBox::valueChanged, this, [this](int b) {
             m_color.setRgb(m_color.red(), m_color.green(), b);
-            Q_EMIT ColorChanged();
+            syncWithColor();
+            Q_EMIT ColorChanged(m_color);
         });
         connect(m_nameField, &QSpinBox::valueChanged, this, [this](int hex) {
             m_color = QColor::fromString(std::format("#{:06x}", hex));
             syncWithColorForNameFieldChanged();
+            Q_EMIT ColorChanged(m_color);
         });
     }
-
-    connect(this, &ColorFieldsPanel::ColorChanged, this, &ColorFieldsPanel::syncWithColor);
 
     syncWithColor();
 }

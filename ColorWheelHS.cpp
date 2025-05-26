@@ -51,7 +51,7 @@ void ColorWheelHS::updateColorFromTarget()
     }
 
     m_color.setHsvF(h, s, m_color.valueF());
-    Q_EMIT ColorChanged();
+    Q_EMIT ColorChanged(m_color);
 }
 
 void ColorWheelHS::paintEvent(QPaintEvent *event)

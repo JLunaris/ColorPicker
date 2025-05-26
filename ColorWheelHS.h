@@ -20,7 +20,7 @@ class ColorWheelHS : public QWidget
     bool m_isMouseGrabbed {false}; // 是否抓住鼠标
 
 Q_SIGNALS:
-    void ColorChanged();
+    void ColorChanged(const QColor &color);
 
 public Q_SLOTS:
     void syncWithColor();

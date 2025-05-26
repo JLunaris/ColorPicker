@@ -21,7 +21,7 @@ void ColorSliderV::updateColorFromMousePos(const QPointF &pos)
 
     m_color.setHsvF(m_color.hueF(), m_color.saturationF(), float(1 - (y - m_vMargin) / m_sliderHeight));
 
-    Q_EMIT ColorChanged();
+    Q_EMIT ColorChanged(m_color);
 }
 
 void ColorSliderV::paintEvent(QPaintEvent *event)
