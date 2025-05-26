@@ -53,9 +53,6 @@ private:
     void setupUi();
     void syncWithColorForNameFieldChanged();
 
-protected:
-    void paintEvent(QPaintEvent *event) override;
-
 public:
     explicit ColorFieldsPanel(QColor &color, QWidget *parent = nullptr);
 };

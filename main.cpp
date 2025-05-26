@@ -1,9 +1,7 @@
-#include "ColorFieldsPanel.h"
-#include "ColorSliderV.h"
-#include "ColorWheelHS.h"
-#include <QColor>
+#include "ColorPicker.h"
 
 #include <QApplication>
+#include <QColor>
 #include <QMainWindow>
 
 class TestMainWindow : public QMainWindow
@@ -13,7 +11,7 @@ class TestMainWindow : public QMainWindow
 public:
     TestMainWindow()
     {
-        auto *colorWheelHs {new ColorFieldsPanel {color, this}};
+        auto *colorPicker {new ColorPicker {color, this}};
     }
 };
 

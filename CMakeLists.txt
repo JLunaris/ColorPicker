@@ -20,7 +20,9 @@ add_executable(ColorPicker main.cpp
         ColorSliderV.cpp
         ColorSliderV.h
         ColorFieldsPanel.cpp
-        ColorFieldsPanel.h)
+        ColorFieldsPanel.h
+        ColorPicker.cpp
+        ColorPicker.h)
 
 target_link_libraries(ColorPicker
         Qt::Core

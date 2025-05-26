@@ -134,6 +134,8 @@ void ColorFieldsPanel::setupUi()
             hBoxLayout->addSpacing(7);
         }
 
+        vBoxLayout->addStretch();
+
         // 水平布局(颜色显示控件 + colorName表单)
         {
             QHBoxLayout *hBoxLayout {new QHBoxLayout};
@@ -203,17 +205,10 @@ void ColorFieldsPanel::syncWithColorForNameFieldChanged()
     m_colorFrame->update();
 }
 
-void ColorFieldsPanel::paintEvent(QPaintEvent *event)
-{
-    QPainter painter {this};
-    painter.setBrush(QColor::fromRgb(83, 83, 83));
-    painter.drawRect(rect());
-}
-
 ColorFieldsPanel::ColorFieldsPanel(QColor &color, QWidget *parent)
         : QWidget(parent), m_color {color}
 {
-    setFixedSize(261, 125);
+    setFixedSize(261, 145);
 
     setupUi();
 
