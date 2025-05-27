@@ -176,9 +176,6 @@ void ColorFieldsPanel::setupUi()
         QSpinBox:focus {
             border: 1px solid #0078d7; /* 蓝色 */
         }
-
-        QSpinBox::up-button { width: 0px; height: 0px;  }
-        QSpinBox::down-button { width: 0px; height: 0px; border: none; }
     )");
 }
 
